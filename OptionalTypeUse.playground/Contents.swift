@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
+//========可选类型的使用========
 /**
  可选类型的介绍
  注意:
@@ -44,6 +44,7 @@ import UIKit
  */
 //var str : String = "why"
 
+/*
 //1.定义可选类型:泛型集合
 //1>定义方式一:
 //var name: Optional<String> = nil
@@ -76,6 +77,33 @@ if let tempName = name {
 if let name = name {
     print(name)
 }
+*/
+
+//========可选类型的应用========
+/**
+ 只要一个类型有可能为nil，那么这个标识符的类型一定是一个可选类型
+ */
+
+//1.将字符串转成Int类型
+let m : Double = 2.44
+let n = Int(m)
+
+let str: String = "123"
+let num = Int(str) //123/nil
+print(num)
+
+//2.根据文件名称:123.plist,获取该文件的路径
+let path : String? = Bundle.main.path(forResource: "123.plist", ofType: nil)   //string/nil
+
+//3.将一个字符串转成NSURL
+//如果字符串中有中文，那么就是转化不成功，返回结果nil
+//let url: NSURL? = NSURL(string: "http://www.baidu.com")
+let url = URL(string: "http://www.baidu.com")
+
+//4.从字典中取出元素
+let dict : [String : Any] = ["name":"why", "age":18]
+let value: Any? = dict["name"]  //Any/nil
+
 
 
 
